@@ -1,0 +1,47 @@
+:root{--g:#1f3a5f;--bg:#f4f6f9;--card:#fff;--tx:#1b2430;--mu:#64707f;--bd:#dde3ea;--red:#c0392b;--amb:#b7791f;--blu:#2b5fa8;--ok:#2f7d5b;--ac:#1f3a5f}
+@media(prefers-color-scheme:dark){:root{--g:#2d4f7c;--ac:#8db4e8;--ok:#4fb287;--red:#e5604f;--bg:#0f141b;--card:#171e28;--tx:#e6ebf1;--mu:#8e9aab;--bd:#263040}}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.4 system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--tx);padding-bottom:calc(70px + env(safe-area-inset-bottom))}
+.top{position:sticky;top:0;z-index:5;background:var(--g);color:#fff;display:flex;align-items:center;gap:10px;padding:10px 14px;padding-top:calc(10px + env(safe-area-inset-top))}
+.top h1{font-size:18px;margin:0;flex:1}
+.pill{font-size:12px;padding:2px 8px;border-radius:99px;background:#ffffff26}
+.pill.off{background:var(--red)}
+main{max-width:820px;margin:0 auto;padding:14px}
+.tabs{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom);z-index:5}
+.tabs a{flex:1;text-align:center;text-decoration:none;color:var(--mu);font-size:11px;padding:7px 0}
+.tabs a i{display:block;font-style:normal;font-size:20px}
+.tabs a.on{color:var(--ac);font-weight:600}
+.card{box-shadow:0 1px 2px #1b24300d;background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:12px;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:10px}
+.kpi{box-shadow:0 1px 2px #1b24300d;border-top:3px solid var(--g);background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:12px}
+.kpi b{display:block;font-size:28px}
+.kpi span{color:var(--mu);font-size:12px}
+.kpi.bad b{color:var(--red)}.kpi.good b{color:var(--ok)}
+h2{font-size:16px;margin:4px 0 10px}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:99px;background:var(--bd);color:var(--tx);white-space:nowrap}
+.Low{background:#e1f0e9;color:#256a4c}.Medium{background:#fbf0d6;color:#7a5412}.High{background:#fbe3d3;color:#a1400f}.Critical{background:#f7d9d5;color:#9b2c20}
+.Open{background:#f7d9d5;color:#9b2c20}.Investigating,.Inprogress{background:#dce7f6;color:#234f8f}.Closed,.Done{background:#e1f0e9;color:#256a4c}
+.mu{color:var(--mu);font-size:13px}
+.btn{background:var(--g);color:#fff;border:0;border-radius:10px;padding:10px 14px;font:inherit;cursor:pointer}
+.btn.small{padding:5px 10px;font-size:13px;background:#fff;color:#1f3a5f}
+.btn.ghost{background:transparent;color:var(--ac);border:1px solid var(--ac)}
+.btn.danger{background:var(--red)}
+.fab{position:fixed;right:16px;bottom:calc(78px + env(safe-area-inset-bottom));border-radius:99px;padding:14px 18px;box-shadow:0 4px 12px #1f3a5f55;z-index:4}
+label{display:block;font-size:13px;color:var(--mu);margin:10px 0 3px}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font:inherit}
+textarea{min-height:80px}
+.modal{position:fixed;inset:0;background:#0008;z-index:10;display:flex;align-items:flex-end;justify-content:center}
+.modal[hidden]{display:none}
+.sheet{background:var(--card);width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px}
+@media(min-width:600px){.modal{align-items:center}.sheet{border-radius:16px}}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:90px;background:#222;color:#fff;padding:9px 16px;border-radius:99px;z-index:20}
+.bar{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:13px}
+.bar span:first-child{width:120px}.bar .t{flex:1;background:var(--bd);border-radius:6px;height:12px}.bar .t i{display:block;height:100%;background:var(--g);border-radius:6px}
+.chk{display:flex;gap:6px;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bd)}
+.chk select{width:auto}
+.filters{display:flex;gap:6px;margin-bottom:10px;overflow:auto}
+.filters button{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:99px;padding:5px 12px;font:inherit;font-size:13px;white-space:nowrap}
+.filters button.on{background:var(--g);color:#fff;border-color:var(--g)}
+.empty{text-align:center;color:var(--mu);padding:30px 0}
+.overdue{color:var(--red);font-weight:600}
